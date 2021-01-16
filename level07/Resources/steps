@@ -1,0 +1,4 @@
+ls -la
+видим бинарник с SUID
+трейсим его
+пробуем заменить LOGNAME export NAME = '$(getflag)'
