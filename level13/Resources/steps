@@ -1,0 +1,20 @@
+ls -l
+видим экзешник
+пробуем запустить и получаем фразу: UID 2013 started us but we we expect 4242
+смотрим через трейс:
+getuid()                                                                        = 2013
+getuid()                                                                        = 2013
+
+с помощью gdb (GDB — переносимый отладчик проекта GNU, который работает на многих UNIX-подобных системах и умеет производить отладку многих языков программирования, включая Си, C++, Free Pascal, FreeBASIC, Ada, Фортран, Python3, Swift, NASM и Rust)
+меняет результат вызова getuid на 4242 (задаем eax - имя вашего пользователя в системе)
+1)запускаем программу через gdb
+2)дисасемблируем код программы
+3)ставим брейкпоинт на сравнении getuid (cmp)
+4)запускаем, программа остановиться на брейкпоинте
+5)здаем eax
+6)продолжаем выполнение
+7)получаем токен
+set -- Evaluate expression EXP and assign result to variable VAR
+disas -- Disassembles a specified function or a function fragment
+break -- Set breakpoint at specified line or function
+
